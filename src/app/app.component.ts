@@ -11,7 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component'; // Adjust path as n
   styleUrls: ['./app.component.css'] // Ensure this is plural
 })
 export class AppComponent {
-  title = 'your-project-name';
+  title = 'research';
   isSidebarOpen = true; // Sidebar state
 
   toggleSidebar() {
