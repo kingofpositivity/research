@@ -1,0 +1,93 @@
+
+<div class="div"  style="margin: 15px;" >
+
+<div class="admin-card d-flex  " style="background-color: white;">
+    
+  <div class="admin-contact d-flex " style="margin-left: 10px;width: 88%;">
+  
+    <div class="contact-item d-flex" style="border-right: 2px solid #ebebeb;padding-right: 9%;">
+      <img src="/assets/user.png" alt="Customer Icon"style="width: 65px; height: 65px; margin-right: 15px;margin-left: 6px;" />
+
+      <div class="div" style=" margin-top: 8px; margin-left: 1px; ">
+        <div class="admin-name" style="font-size: 19px;">Name of the Admin</div>
+        <p style="font-size: 14px; margin-top: -4px;">Admin</p></div>
+    </div>
+    <div class="contact-item" style="padding-left: 12%; display: flex; flex-direction: column; justify-content: center;">
+      <div style="font-size: 12px;">Email</div>
+      <p class="admin-email" style="font-size: 12px; margin: 0;">sampleadmingmail.com</p>
+  </div>
+  
+    <div class="contact-item " style="border-right: 2px solid #ebebeb;padding-right: 12%;display: flex; flex-direction: column; justify-content: center;margin-left:9%;">
+        <div style="font-size: 12px;">Password</div>
+        <div class="d-flex align-items-center"> <!-- Flex container for password and icon -->
+            <p class="admin-password" style="font-size: 12px; margin-right: 5px;">xxxxxxxx</p> <!-- Adjust margin as needed -->
+            <span class="material-icons" style=" opacity: 60%; cursor: pointer;font-size: 13px;color: gray;align-items:center ;margin-top: 4px;">visibility</span> <!-- Icon for visibility -->
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="/assets/edit.svg" alt="Edit Icon" style="width: 65px; height: 65px; margin-right: 15px; margin-left: 6px;" />
+</div>
+  
+</div>
+
+
+<!-- Add this link to your HTML for Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="d-flex" style="margin:  20px 0 20px 0;">
+  <div class="search-box">
+    <input type="text" placeholder="  Search by Name / Email" class="search-input">
+    <span class="material-icons search-icon">search</span>
+  </div>
+  <button class="search-button">Search</button>
+</div>
+
+ 
+<div class="admin-card" style="background-color: white;padding: 15px;">
+  <div class="admin-name" style="font-size: 18px;margin-left: 12px;margin-bottom: 5px;">users</div>
+  <div class="data-table">
+    <table>
+      <thead style="margin-bottom: 20px !important;font-size: 13px;">
+        <tr style="border: 0px !important;">
+          <th  style="padding-bottom: 40px ">Name
+           </th>
+           <th  style="padding-bottom: 40px ">Email</th>
+           <th  style="padding-bottom: 40px ">Alert</th>
+           <th  style="padding-bottom: 40px ">Action <span></span> </th>
+        </tr>
+      </thead>
+      <tbody style="margin-top: 20px !important;">
+        <tr *ngFor="let item of items">
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.status }}</td> <!-- Assuming you meant status for Alert -->
+          <td class="action-buttons">
+            <div class="acti on-button" (click)="editItem(item)" style="margin-top: 3px;">
+              <img src="/assets/edit.svg" alt="Edit" style="width: 29px; height: 30px; margin-right: 5px;margin-top: 0.1%;" />
+               
+            </div>
+            <div class="acti on-button" (click)="deleteItem(item)">
+              <img src="/assets/delete.svg" alt="Delete" style="width: 20px; height: 19px; margin-right: 5px;margin-top: 8px;" />
+               
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<!-- Pagination controls -->
+<!-- <div class="pagination">
+  <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+    Next
+  </button>
+</div> -->
+
+  </div>

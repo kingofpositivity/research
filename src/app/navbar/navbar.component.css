@@ -1,0 +1,49 @@
+:host {
+  height: 70px; /* Fixed height for the navbar */
+  background-color: white; /* White background color */
+  color: black; /* Black text color */
+  padding: 0 20px; /* Add some horizontal padding */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    vertical-align: middle;
+ 
+}
+
+ 
+.user-info {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center align vertically */
+}
+
+.user-icon {
+  width: 40px; /* Adjust icon size as needed */
+  height: 40px; /* Adjust icon size as needed */
+  border-radius: 50%; /* Make icon circular */
+  background-color: #dfdfdf; /* Background color for the circular icon */
+  display: flex; /* Use flexbox for centering the letter */
+  justify-content: center; /* Center the letter horizontally */
+  align-items: center; /* Center the letter vertically */
+  color: white; /* Text color for the letter */
+  font-weight: bold; /* Make the letter bold */
+}
+
+.letter {
+  font-size: 18px; /* Adjust letter size as needed */
+}
+
+.user-details {
+  margin-left: 10px; /* Space between icon and user details */
+  margin-right: 50px;
+}
+
+.user-name {
+  display: block; /* Display name on top */
+  font-size: 13px; /* Adjust size as needed */
+  font-weight: bold; /* Make the name bold */
+}
+
+.user-username {
+  margin-top: -2px;
+  display: block; /* Display username below */
+  font-size: 12px; /* Adjust size as needed */
+  color: #555; /* Color for username */
+}

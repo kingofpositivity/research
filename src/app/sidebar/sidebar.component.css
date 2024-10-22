@@ -1,0 +1,63 @@
+/* Container for the entire application */
+.app-container {
+  display: flex; /* Sidebar and main content side by side */
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Sidebar styles */
+.sidebar {
+  padding-top: 30px;
+    width: 250px; /* Full width when open */
+   background-color: #f8f9fa; /* Light background */
+  box-shadow: 2px 0 0px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  transition: width 0.3s ease; /* Smooth transition for width */
+}
+.material-icons
+{
+  font-size: 13px;
+}
+
+.sidebar.closed {
+  width: 60px; /* Reduced width when closed */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Highlight for selected menu items */
+.sidebar li.selected {
+  background-color: rgba(255, 217, 0, 0.123); /* Golden yellow with 20% opacity */
+  color: #ffc400; /* Golden yellow text */
+  border-left: 3px solid #cf9f00;
+  font-weight: bold; /* Bold text */
+}/* Highlight for selected menu items */
+.sidebar li {
+  border-left: 3px solid #f7f7f700;
+}
+
+/* Hover effect for sidebar items */
+.sidebar li:hover {
+  background-color: rgba(255, 215, 0, 0.1); /* Light golden yellow hover */
+}/* Change SVG color for selected menu items */
+.sidebar li.selected img {
+  filter: invert(56%) sepia(98%) saturate(747%) hue-rotate(1deg) brightness(104%) contrast(104%);
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1; /* Take remaining width */
+  display: flex;
+  flex-direction: column; /* Stack navbar and content vertically */
+}
+
+/* Navbar styles */
+app-navbar {
+  height: 60px; /* Fixed height for the navbar */
+  background-color: #343a40; /* Dark background color */
+  color: white; /* Text color */
+}
+
+/* Content body styles */
+.content-body {
+  flex: 1; /* Take remaining space below the navbar */
+  overflow-y: auto; /* Allow scrolling */
+  padding: 20px; /* Add some padding */
+}

@@ -1,0 +1,29 @@
+.app-container {
+  display:flex;
+  flex-direction: column; /* Stack navbar above content */
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent the entire page from scrolling */
+ 
+}
+
+.content-container {
+  display: flex; /* Arrange sidebar and main content in a row */
+  flex: 1; /* Take the remaining height below the navbar */
+  overflow: hidden; /* Prevent scrolling in the sidebar */
+}
+
+app-sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+}
+
+.main-content {
+  flex: 1; /* Take remaining width */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+   overflow-y: auto; /* Allow scrolling for the main content only */
+}
+
+.content-body {
+  flex: 1; /* Ensure content-body takes up available space */
+  overflow-y: auto; /* Allow internal scrolling within main content */
+}
