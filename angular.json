@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/research",
+            "outputPath": "dist/research1",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -28,8 +28,9 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
-            "scripts": []
-          },
+            "scripts": [],         "baseHref" : "/"
+
+          },            
           "configurations": {
             "production": {
               "budgets": [

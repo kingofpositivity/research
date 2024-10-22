@@ -27,34 +27,57 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ]
 })
-export class Page1Component implements AfterViewInit {
+export class Page1Component {
   displayedColumns: string[] = ['name', 'email', 'status', 'actions'];
+  items: any[] = []; // Initialize an empty array for items
+  dataSource = new MatTableDataSource(this.items);
+  currentItemCount = 0; // Track the current number of items loaded
+  isLoading = false; // Track loading state
 
-  items = Array.from({ length: 21 }, (_, i) => ({
+  // Sample data to simulate data loading
+  allItems = Array.from({ length: 100 }, (_, i) => ({
     id: i + 1,
     name: `User ${i + 1}`,
     email: `user${i + 1}@example.com`,
     status: i % 2 === 0 ? 'Active' : 'Inactive'
   }));
-  dataSource = new MatTableDataSource(this.items);
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
-
-  ngAfterViewInit() {
-    // Assign the paginator and sort to the data source after view initialization
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  constructor() {
+    this.loadMoreItems(); // Load initial items
   }
+
+  loadMoreItems() {
+    if (this.isLoading || this.currentItemCount >= this.allItems.length) return; // Prevent loading if already loading or if all items are loaded
+
+    this.isLoading = true; // Set loading state
+    const itemsToLoad = 20; // Number of items to load at a time
+    const newItems = this.allItems.slice(this.currentItemCount, this.currentItemCount + itemsToLoad);
+    this.items.push(...newItems); // Add new items to the current items
+    this.dataSource.data = this.items; // Update the data source
+    this.currentItemCount += newItems.length; // Update current item count
+
+    // Simulate a delay to mimic an API call
+    setTimeout(() => {
+      this.isLoading = false; // Reset loading state
+    }, 1000);
+  }
+
+  onScroll() {
+    const tableContainer = document.querySelector('.table-container');
+    if (tableContainer) {
+        // Calculate if the user is within 100 pixels of the bottom
+        const nearBottom = tableContainer.scrollHeight - tableContainer.scrollTop - tableContainer.clientHeight < 100;
+        if (nearBottom) {
+            this.loadMoreItems(); // Load more items when scrolled near the bottom
+        }
+    }
+}
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  // No need for manual pageIndex handling, MatPaginator automatically handles it
-  // changePage method is unnecessary now
 
   editItem(item: any) {
     console.log('Edit:', item);
@@ -63,5 +86,4 @@ export class Page1Component implements AfterViewInit {
   deleteItem(item: any) {
     console.log('Delete:', item);
   }
-
 }

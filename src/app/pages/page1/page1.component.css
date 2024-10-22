@@ -41,19 +41,7 @@
   width: 30%; /* Width of the search box */
 }
 
-.table-container {
-  max-height: 400px; /* Set the height of the container */
-  overflow-y: auto; /* Enable vertical scrolling */
-}
 
-.mat-header-cell {
-  background-color: white; /* Ensure the header is visible */
-  z-index: 2; /* Make sure the header stays above the table body */
-}
-
-.mat-table {
-  width: 100%; /* Ensure the table takes full width */
-}
 
 
 
@@ -148,3 +136,46 @@
   border: none; /* No border */
    cursor: pointer; /* Pointer on hover */
 } 
+
+
+
+/* Lighten the table row dividers */
+.mat-divider {
+  background-color: rgba(195, 0, 0, 0.845)!important;  /* Lighter color for dividers */
+}
+
+/* Customize row and header cell borders */
+.mat-cell, .mat-header-cell {
+  border-bottom: 1px solid rgba(249, 0, 0, 0.856)!important;  /* Light border color */
+}
+.loading-indicator {
+  text-align: center;
+  padding: 10px;
+  color: #555; /* Optional: Change text color */
+  font-style: italic; /* Optional: Make text italic */
+}
+/* Optional: To ensure a consistent look */
+.mat-row {
+  border-bottom: 1px solid rgba(228, 0, 0, 0.947) !important; /* Lighten the row divider */
+}
+
+
+
+
+.table-container {
+  max-height: 400px; /* Set the height of the container */
+  overflow-y: auto;
+  background-color: white !important; /* Enable vertical scrolling */
+}
+
+.mat-table {
+  width: 100%; /* Ensure the table takes full width */
+  background-color: white !important; /* Set table background color to white */
+}
+
+ 
+/* Optional: To ensure there is no gray background on hover */
+.mat-row:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Light hover effect */
+}
+
