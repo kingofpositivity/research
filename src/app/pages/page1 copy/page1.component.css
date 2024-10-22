@@ -41,25 +41,6 @@
   width: 30%; /* Width of the search box */
 }
 
-.table-container {
-  max-height: 400px; /* Set the height of the container */
-  overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.mat-header-cell {
-  background-color: white; /* Ensure the header is visible */
-  z-index: 2; /* Make sure the header stays above the table body */
-}
-
-.mat-table {
-  width: 100%; /* Ensure the table takes full width */
-}
-
-
-
-
-
-
 .search-input {
 
   width: 100%;
