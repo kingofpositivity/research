@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Page1Component } from './page1.component';
+import { LoyaltyLogicComponent } from './loyaltylogic.component';
 
-describe('Page1Component', () => {
-  let component: Page1Component;
-  let fixture: ComponentFixture<Page1Component>;
+describe('LoyaltyLogicComponent', () => {
+  let component: LoyaltyLogicComponent;
+  let fixture: ComponentFixture<LoyaltyLogicComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Page1Component]
+      imports: [LoyaltyLogicComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Page1Component);
+    fixture = TestBed.createComponent(LoyaltyLogicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

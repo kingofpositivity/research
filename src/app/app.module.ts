@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routes';
-import { Page1Component } from './pages/page1/page1.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 // Import Angular Material modules here
@@ -10,8 +9,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-
+import { MatButtonModule } from '@angular/material/button';   
+import { OrdersComponent } from './pages/orders/orders.component';
+import { UsermanagementComponent } from './pages/usermanagement/usermanagement.component';
+import { customerdetailsComponent } from './pages/customerdetails/customerdetails.component';
+import { LoyaltyLogicComponent } from './pages/loyaltylogic/loyaltylogic.component';
+  
 // If AppComponent is a standalone component, you should not import it here
 // import { AppComponent } from './app.component'; 
 
@@ -28,7 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
     SidebarComponent,
     NavbarComponent,
     MatSortModule,
-    MatInputModule,Page1Component,
+    MatInputModule,UsermanagementComponent,OrdersComponent,customerdetailsComponent,LoyaltyLogicComponent,
     MatButtonModule,
     // No need to import AppComponent here as it is standalone
   ],

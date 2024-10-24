@@ -1,0 +1,73 @@
+.heading h1 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgb(238, 238, 238);
+  border: 1px solid #ccc;  /* Default border */
+}
+
+.input-wrapper.editable {
+  border-color: rgb(214, 214, 214);  /* Change border to white when editing */
+  background-color: white;  /* White background when editing */
+}
+
+.input-box input, .input-box select {
+  border: none;  /* No border on input itself */
+  background-color: transparent;
+  padding: 5px;
+  font-size: 16px;
+  flex: 1;
+}
+
+.input-box input:disabled, .input-box select:disabled {
+  background-color: #00000000;  /* Transparent background for disabled state */
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 18px;
+  border-left: 1px solid rgb(179, 179, 179);
+  padding-left: 10px;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.edit-button {
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
+
+.cancel-button, .save-button {
+  background-color: black;
+  color: white;
+  margin-right: 10px;
+}
+
+.flex-row {
+  display: flex;
+  gap: 15px; /* Space between duration and max redemption */
+}

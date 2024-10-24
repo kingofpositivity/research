@@ -1,11 +1,8 @@
-<!-- Add this link to your HTML for Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <div class="app-container">
-  <div class="sidebar d-flex justify-content-between " [class.closed]="!isOpen" style="display: flex; flex-direction: column; height: 89%;">
+  <div class="sidebar d-flex justify-content-between" [class.closed]="!isOpen" style="display: flex; flex-direction: column; height: 89%;">
     
-    <div style=" "> <!-- This div will take up remaining space -->
-      <button *ngIf = "false"
+    <div> <!-- This div will take up remaining space -->
+      <button *ngIf="false"
         (click)="onToggle()" 
         class="toggle-button"
         style="background: none; border: none; cursor: pointer; padding: 10px;"
@@ -14,52 +11,45 @@
       </button>
       
       <ul *ngIf="isOpen" style="padding: 0; margin: 0; list-style: none;">
-         <li 
-          [class.selected]="selectedMenu === 'customer_details'" 
-          (click)="selectMenu('customer_details')"
-          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;"
-        >
-          <img src="/assets/menu_loyality.svg" alt="Customer Icon"style="width: 20px; height: 20px; margin-right: 15px;margin-left: 2px;" />Orders
-        </li>
-          <li 
-          [class.selected]="selectedMenu === 'orders'" 
-          (click)="selectMenu('orders')"
-          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;"
-        >
-          <img src="/assets/menu_user.svg" alt="Orders Icon" style="width: 24px; height: 24px; margin-right: 15px;" />
-          Customer Details
-        </li>
-     
         <li 
-          [class.selected]="selectedMenu === 'user_management'" 
-          (click)="selectMenu('user_management')"
-          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;"
-        >
-          <img src="/assets/menu_user.svg" alt="User Management Icon" style="width: 24px; height: 24px; margin-right: 15px;" />
-          User Management
+          [class.selected]="selectedMenu === '1'" 
+          (click)="selectMenu('1')" 
+          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;">
+          <img src="assets/menu_loyality.svg" alt="orders Icon" style="width: 20px; height: 20px; margin-right: 15px; margin-left: 2px;" />
+          User management
         </li>
         <li 
-          [class.selected]="selectedMenu === 'loyalty_logic'" 
-          (click)="selectMenu('loyalty_logic')"
-          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;"
-        >
-          <img src="/assets/menu_loyality.svg" alt="Loyalty Logic Icon" style="width: 20px; height: 20px; margin-right: 15px;margin-left: 2px;" />
-          Loyalty Logic
+          [class.selected]="selectedMenu === '2'" 
+          (click)="selectMenu('2')" 
+          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;">
+          <img src="assets/menu_user.svg" alt="Customer Icon" style="width: 24px; height: 24px; margin-right: 15px;" />
+          Orders
         </li>
+        <li 
+          [class.selected]="selectedMenu === '3'" 
+          (click)="selectMenu('3')" 
+          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;">
+          <img src="assets/menu_user.svg" alt="User Management Icon" style="width: 24px; height: 24px; margin-right: 15px;" />
+          Customer details
+        </li>
+        <li 
+          [class.selected]="selectedMenu === '4'" 
+          (click)="selectMenu('4')" 
+          style="display: flex; align-items: center; padding: 10px 20px; font-size: 13px; cursor: pointer; transition: background-color 0.3s ease;">
+          <img src="assets/menu_loyality.svg" alt="Loyalty Logic Icon" style="width: 20px; height: 20px; margin-right: 15px; margin-left: 2px;" />
+Loyality logic        </li>
       </ul>
-      
+    
     </div>
 
     <div 
     class="logout-option"  
-    style="padding: 15px 20px; cursor: pointer; transition: background-color 0.3s ease;font-size: 14px; padding-bottom: 30px; "
-  >
+    style="padding: 15px 20px; cursor: pointer; transition: background-color 0.3s ease; font-size: 14px; padding-bottom: 30px;"
+    (click)="logout()">
     <span style="display: block; border-top: 1px solid #ccc; margin-bottom: 20px;"></span> <!-- Line above -->
-  
-    <span class="material-icons" style="margin-right: 5px;   font-size: 19px;vertical-align: middle;">logout</span> Logout
+    <span class="material-icons" style="margin-right: 5px; font-size: 19px; vertical-align: middle;">logout</span> Logout
   </div>
-
-
+  
 
   </div>
 </div>

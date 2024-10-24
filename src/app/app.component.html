@@ -1,7 +1,7 @@
-<div class="app-container " style="flex-direction: column;padding-top: 0px;opacity: .89;"  >
-  <app-navbar style="  top: 0; width: 100%; z-index: 1000; margin: 0; padding: 0; box-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);"></app-navbar>
+<div class="app-container" style="flex-direction: column; padding-top: 0px; opacity: .89;">
+  <app-navbar *ngIf="!isLoginPage()" style="top: 0; width: 100%; z-index: 1000; margin: 0; padding: 0; box-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);"></app-navbar>
   <div class="content-container" style="background-color: rgb(241, 247, 250);">
-    <app-sidebar [isOpen]="isSidebarOpen" (toggle)="toggleSidebar()"></app-sidebar>
+    <app-sidebar *ngIf="!isLoginPage()" [isOpen]="isSidebarOpen" (toggle)="toggleSidebar()"></app-sidebar>
     <div class="main-content" style="scroll-behavior: auto;">
       <div class="content-body">
         <router-outlet></router-outlet>

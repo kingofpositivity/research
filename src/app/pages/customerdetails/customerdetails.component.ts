@@ -1,3 +1,5 @@
+
+ 
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,10 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-page1',
+  selector: 'app-customerdetails',
   standalone: true,
-  templateUrl: './page1.component.html',
-  styleUrls: ['./page1.component.css'],
+   templateUrl: './customerdetails.component.html',
+  styleUrl: './customerdetails.component.css',
   imports: [
     CommonModule,
     MatTableModule,
@@ -27,7 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ]
 })
-export class Page1Component {
+export class customerdetailsComponent {
   displayedColumns: string[] = ['name', 'email', 'status', 'actions'];
   items: any[] = []; // Initialize an empty array for items
   dataSource = new MatTableDataSource(this.items);
@@ -87,3 +89,5 @@ export class Page1Component {
     console.log('Delete:', item);
   }
 }
+
+

@@ -1,0 +1,54 @@
+<div class="admin-card" style="margin: 15px; padding-left: 25px; background: white;height: 94%;">
+  <div class="heading" style="border-bottom: solid 1px #b9b9b9; font-weight: 480; margin-right: 30px; padding-bottom: 10px; margin-bottom: 30px;">
+    <div>Loyalty Logic</div>
+  </div>
+
+  <div class="form-container">
+    <!-- First field: Percentage of total amount -->
+    <div class="input-box">
+      <label for="percentage">Percentage of total amount</label>
+      <div [ngClass]="{'editable': isEditable}" class="input-wrapper">
+        <input id="percentage" type="number" [disabled]="!isEditable">
+        <span class="icon">%</span>
+      </div>
+    </div>
+
+    <!-- Row for Duration and Max points redemption -->
+    <div class="flex-row">
+      <!-- Second field: Duration -->
+      <div class="input-box">
+        <label for="duration">Duration</label>
+        <div [ngClass]="{'editable': isEditable}" class="input-wrapper">
+          <ng-container *ngIf="!isEditable; else editableDuration">
+            <input id="duration" type="text" [disabled]="!isEditable">
+          </ng-container>
+          <ng-template #editableDuration>
+            <select id="duration">
+              <option *ngFor="let option of durationOptions" [value]="option">{{ option }} days</option>
+            </select>
+          </ng-template>
+        </div>
+      </div>
+
+      <!-- Third field: Max points redemption per hour -->
+      <div class="input-box">
+        <label for="redemption">Max points redemption per hour</label>
+        <div [ngClass]="{'editable': isEditable}" class="input-wrapper">
+          <input id="redemption" type="number" [disabled]="!isEditable">
+          <span class="icon" style="font-size: 13px;">HMX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating button -->
+  <div class="buttons">
+    
+    <button *ngIf="!isEditable" mat-fab color="var(--goldcolor)" class="edit-button" (click)="toggleEdit()">Edit Logic</button>
+    
+    <div *ngIf="isEditable">
+      <button mat-raised-button color="warn" class="cancel-button" (click)="toggleEdit()">Cancel</button>
+      <button mat-raised-button color="primary" class="save-button" (click)="toggleEdit()">Save</button>
+    </div>
+  </div>
+</div>
