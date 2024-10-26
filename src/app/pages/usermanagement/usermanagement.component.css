@@ -10,7 +10,26 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
+  }.reset-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black; /* Black border for contrast */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
+  
+  .save-button {
+    background-color: black;
+    color: white;
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+   
+  
   
   /* Edit Form Placeholder */
   .edit-placeholder {

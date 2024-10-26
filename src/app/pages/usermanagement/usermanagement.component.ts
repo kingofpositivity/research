@@ -29,7 +29,8 @@ import { MatButtonModule } from '@angular/material/button';
   ]
 })export class UsermanagementComponent {
 [x: string]: any;
- 
+searchInput: string = ''; // Declare a variable to hold the input text
+
   displayedColumns: string[] = ['name', 'email', 'status', 'actions'];
   items: any[] = []; // Initialize an empty array for items
   dataSource = new MatTableDataSource(this.items);
@@ -40,7 +41,12 @@ import { MatButtonModule } from '@angular/material/button';
   editName: string = ''; // Placeholder for name edit
   editEmail: string = ''; // Placeholder for email edit
   locationOptions = ['Bagalur', 'MG Road', 'EG Pura']; // Array of options
-
+  userData = {
+    name: '',
+    email: '',
+    store: '',
+    password: ''
+  }; // Object to hold user input data
   // Sample data to simulate data loading
   allItems = Array.from({ length: 100 }, (_, i) => ({
     id: i + 1,
@@ -48,7 +54,10 @@ import { MatButtonModule } from '@angular/material/button';
     email: `user${i + 1}@example.com`,
     status: i % 2 === 0 ? 'Active' : 'Inactive'
   }));
- 
+  onSearchClick(searchText: string) {
+    console.log('Search clicked with input:', searchText);
+    // You can handle the search logic here
+  }
   constructor() {
     this.loadMoreItems(); // Load initial items
   }
@@ -101,10 +110,14 @@ import { MatButtonModule } from '@angular/material/button';
   }// Show the edit form and hide the main page
   toggleEdit(text: string) {
     this.showProfile = text === 'Profile Edit';
-
-    this.isEditable = !this.isEditable; // Toggle the editable state
-  // Update the button text
+    this.isEditable = !this.isEditable; // Toggle edit mode
+    console.log('Edit mode toggled:', this.isEditable);
   }
+  
+  logAction(action: string) {
+    console.log(action); // Log the button action
+  }
+  
 
 // Hide the edit form and show the main page when canceling
 cancelEdit() {
@@ -116,5 +129,23 @@ saveChanges() {
   console.log('Changes saved:', this.editName, this.editEmail);
   this.isEditable = false; // Set editable to false to return to the main page after saving
 }
+ // Function to reset fields to initial state
+ resetFields() {
+  this.userData = {
+    name: '',
+    email: '',
+    store: '',
+    password: ''
+  };
+  console.log('Fields have been reset:', this.userData);
+  this.toggleEdit('save')
 
+}
+
+// Function to save data and log selected items
+saveData() {
+  console.log('Selected items to save:', this.userData);
+  this.toggleEdit('save')
+  // Add your save logic here
+} 
 }

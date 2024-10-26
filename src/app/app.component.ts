@@ -6,7 +6,7 @@ import { OrdersComponent } from './pages/orders/orders.component'; // Ensure thi
 import { UsermanagementComponent } from './pages/usermanagement/usermanagement.component'; // Ensure this path is correct
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';  // Import necessary modules
-
+ 
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';  // Import necessary modules
     RouterOutlet, 
     SidebarComponent, 
     NavbarComponent, 
-    OrdersComponent, 
+    OrdersComponent, AppComponent,
     UsermanagementComponent // Ensure components are valid
   ],
   templateUrl: './app.component.html',

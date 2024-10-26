@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [], // If you need any other modules, import them here
+  imports: [FormsModule], // Add FormsModule here
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'] // Fixed the property name from styleUrl to styleUrls
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) {} // Inject Router
+  username: string = '';
+  password: string = '';
+
+  constructor(private router: Router) {}
 
   onSubmit() {
-    // Navigate to the user management page when the button is clicked
+    console.log('Email:', this.username);
+    console.log('Password:', this.password);
     this.router.navigate(['/usermanagement']);
   }
 }

@@ -4,15 +4,15 @@
         <span class="app-name" style="font-weight: 600; font-size: 16px;">Research App</span>
     </div>
 
-    <span class="welcome-message" style="margin-bottom: 20px; font-weight: 600; font-size: 18px;">Welcome back!</span>
+    <span class="welcome-message" style="margin-bottom: 20px; font-weight: 600; font-size: 18px;">Nice to see you again</span>
 
-    <form style="width: 300px; text-align: center;">
+    <form style="width: 300px; text-align: center;" (ngSubmit)="onSubmit()">
         <label for="username" style="display: block; text-align: left;">Email:</label>
-        <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+        <input type="text" id="username" name="username" [(ngModel)]="username" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
         
         <label for="password" style="display: block; text-align: left;">Password:</label>
-        <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
+        <input type="password" id="password" name="password" [(ngModel)]="password" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
         
-        <button type="submit" (click)="onSubmit()"    style="width: 100%; padding: 10px; background-color: var(--goldcolor); color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Sign In</button>
+        <button type="submit" style="width: 100%; padding: 10px; background-color: var(--goldcolor); color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Sign In</button>
     </form>
 </div>

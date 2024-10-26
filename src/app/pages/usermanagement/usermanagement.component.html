@@ -30,13 +30,14 @@
     </div>
   </div>
 
-  <div class="d-flex" style="margin:  20px 0 20px 0;">
+  <div class="d-flex" style="margin: 20px 0;">
     <div class="search-box">
-      <input type="text" placeholder="  Search by Name / Email" class="search-input">
+      <input type="text" placeholder="  Search by Name / Email" class="search-input" [(ngModel)]="searchInput">
       <span class="material-icons search-icon">search</span>
     </div>
-    <button class="search-button">Search</button>
+    <button class="search-button" (click)="onSearchClick(searchInput)">Search</button>
   </div>
+  
 
 <!-- Angular Material Table -->
 <!-- Angular Material Table -->
@@ -109,58 +110,59 @@
     
   </div>
   
-    <!-- Row for Duration and Max points redemption -->
-    <div class="flex-row">
-      <!-- Second field: Duration -->
-      <div class="input-box">
-        <label for="duration">Name</label>
-        <div [ngClass]="{'editable': true}" class="input-wrapper">
-          <input id="redemption" type="number" >
-         </div>
-      </div>
-
-      <!-- Third field: Max points redemption per hour -->
-      <div class="input-box">
-        <label for="redemption">Email</label>
-        <div [ngClass]="{'editable': true}" class="input-wrapper">
-          <input id="redemption" type="number" >
-         </div>
-      </div>
-    </div> <div class="flex-row">
-      <!-- Second field: Duration -->
-      <div class="input-box">
-        <label for="duration">Store</label> <!-- Label for the dropdown -->
-        <div [ngClass]="{'editable': true}" class="input-wrapper">
-          <select id="duration" class="input-wrapper" [ngClass]="{'editable': true}">
-          <option value=""  style="border: 1dp solid #000;"  selected>Select a location</option> <!-- Placeholder option -->
-          <option *ngFor="let option of locationOptions" [value]="option">{{ option }}</option>
-        </select></div>
-      </div>
-      
-      
-
-      <!-- Third field: Max points redemption per hour -->
-      <div class="input-box">
-        <label for="redemption">Password</label>
-        <div [ngClass]="{'editable': true}" class="input-wrapper">
-          <input id="redemption" type="number" >
-         </div>
-      </div>
+<!-- Row for Name, Email, Store, and Password -->
+<div class="flex-row">
+  <!-- Name Field -->
+  <div class="input-box">
+    <label for="name">Name</label>
+    <div [ngClass]="{'editable': true}" class="input-wrapper">
+      <input id="name" type="text" [(ngModel)]="userData.name">
     </div>
   </div>
 
-  <div class="d-flex" style="position: absolute; right: 40px; bottom: 30px; display: flex; align-items: center;">
+  <!-- Email Field -->
+  <div class="input-box">
+    <label for="email">Email</label>
+    <div [ngClass]="{'editable': true}" class="input-wrapper">
+      <input id="email" type="email" [(ngModel)]="userData.email">
+    </div>
+  </div>
+</div>
 
-    <!-- Floating button -->
-    <button class="reset-button" (click)="toggleEdit('reset_create')"style="background: white; padding: 05px 30px; display: flex; justify-content: center; align-items: center;">
+<div class="flex-row">
+  <!-- Store Dropdown -->
+  <div class="input-box">
+    <label for="store">Store</label>
+    <div [ngClass]="{'editable': true}" class="input-wrapper">
+      <select id="store" [(ngModel)]="userData.store" [ngClass]="{'editable': true}">
+        <option value="" selected>Select a location</option>
+        <option *ngFor="let option of locationOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div class="input-box">
+    <label for="password">Password</label>
+    <div [ngClass]="{'editable': true}" class="input-wrapper">
+      <input id="password" type="password" [(ngModel)]="userData.password">
+    </div>
+  </div>
+</div>
+
+   <!-- Reset Button -->
+  <div class="d-flex" style="position: absolute; right: 40px; bottom: 30px; display: flex; align-items: center;">
+    <!-- Reset Button -->
+    <button class="save-button text-center" (click)="resetFields(); logAction('Reset clicked')" style="background: white; color: black; padding: 5px 30px; border: 1px solid black;">
       Reset
     </button>
-    
-    <div *ngIf="!isEditable" style="padding: 5px 30px; display: flex; justify-content: center; align-items: center;" class="search-button" (click)="toggleEdit('save_create')">
+
+    <!-- Save Button -->
+    <button class="save-button text-center" (click)="saveData(); logAction('Save clicked')" style="background: black; color: white; padding: 5px 30px; border: none;">
       Save
-    </div>
-    
+    </button>
   </div>
+ 
 
  </div>
 
